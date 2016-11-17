@@ -1,0 +1,24 @@
+<div ng-controller="customersController">
+   <fieldset>
+      <legend>Customers</legend>
+      <p>Welcome {{currentUser.first_name}}!<p>
+      <button ng-click = "logout()">Sign Out</button>
+      <a href="#/login">Add a New Customer</a>
+      <label><input ng-model="filter" placeholder="filter.."></label>
+      <table>
+         <tr>
+            <col width='200'>
+            <col width="200">
+            <col width="200">
+            <th>Customer Name</th>
+            <th>Created Date</th>
+            <th>Actions</th>
+         </tr>
+         <tr ng-repeat="user in users | filter: filter">
+            <td>{{user.first_name}} {{user.last_name}}</td>
+            <td>{{user.createdAt | date:'MM/dd/yyyy'}}</td>
+            <td><button ng-click=delete(user._id)>Remove</button></td>
+         </tr>
+      </table>
+   </fieldset>
+</div>

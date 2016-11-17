@@ -1,0 +1,27 @@
+<div ng-controller="productsController">
+   <fieldset>
+      <legend>Products</legend>
+      <p>Welcome {{currentUser.first_name}}!<p>
+      <button ng-click = "logout()">Sign Out</button>
+      <label><input ng-model="filter" placeholder="filter.."></label>
+      <h3>Add a New Product</h3>
+      <form>
+         <p>Name:</p>
+         <input type="text" ng-model="product.product">
+         <p>Image (url):</p>
+         <input type="text" ng-model="product.url">
+         <p>Description:</p>
+         <input type="text" ng-model="product.description">
+         <p>Initial Quantity:</p>
+         <input type="number" ng-model="product.inventory">
+         <input type="submit" ng-click="newProduct()">
+      </form>
+      <div id="products" ng-repeat="product in products | filter: filter">
+         <style>img{width: 60px;}</style>
+         <img src="{{product.url}}">
+         <p>{{product.product}}</p>
+         <p>({{product.inventory}} left)</p>
+      </div>
+      <a href="/products">show more</a>
+   </fieldset>
+</div>

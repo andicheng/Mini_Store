@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+    <script src="bower_components/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="assets/app.js" charset="utf-8"></script>
+    <script src="assets/factories/usersFactory.js" charset="utf-8"></script>
+    <script src="assets/factories/ordersFactory.js" charset="utf-8"></script>
+    <script src="assets/controllers/log_regController.js" charset="utf-8"></script>
+    <script src="assets/controllers/dashboardController.js" charset="utf-8"></script>
+    <script src="assets/controllers/customersController.js" charset="utf-8"></script>
+    <script src="assets/controllers/ordersController.js" charset="utf-8"></script>
+    <script src="assets/controllers/productsController.js" charset="utf-8"></script>
+  </head>
+  <body>
+      <div>
+         <p><a href="#/dashboard">Dashboard</a> | <a href="#/products">Products</a> | <a href="#/orders">Orders</a> | <a href="#/customers">Customers</a> | <a href="#/dashboard">Settings</a>
+         <div ng-view="">
+         </div>
+      </div>
+  </body>
+</html>

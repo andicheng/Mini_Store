@@ -1,0 +1,22 @@
+<div ng-controller="dashboardController">
+   <fieldset>
+      <legend>Dashboard</legend>
+      <p>Welcome {{currentUser.first_name}}!<p>
+      <button ng-click = "logout()">Sign Out</button>
+      <label>Search: <input ng-model="search"></label>
+      <div id="products" ng-repeat="product in products | filter: search">
+         <p>{{product.product}}</p>
+         <p>({{product.inventory}} left)</p>
+      </div>
+      <a href="#/products">show more</a>
+      <h3>Recent Orders</h3>
+      <div ng-repeat="order in orders">
+         <p>{{order._user.first_name}} purchased {{order.quantity}} {{order.product.product}}</p>
+      </div>
+      <a href="#/orders">show all orders</a>
+      <div ng-repeat="user in users">
+         <p>{{user.first_name}} {{user.last_name}} joined the store (n days ago)</p>
+      </div>
+      <a href="#/customers">show all customers</a>
+   </fieldset>
+</div>
